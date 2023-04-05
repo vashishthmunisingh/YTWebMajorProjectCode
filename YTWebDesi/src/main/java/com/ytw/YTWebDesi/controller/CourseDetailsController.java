@@ -27,7 +27,7 @@ public class CourseDetailsController {
 	CourseDetailRepository courseDetailRepository;
 	
 	// List All The Courses Available
-	@GetMapping("/list")
+	@GetMapping("/listCourse")
 	public ResponseEntity<List<CourseDetail>> getCourseList() {
 		try {
 			List<CourseDetail> courseList= courseDetailRepository.findAll();
@@ -38,7 +38,7 @@ public class CourseDetailsController {
 	}
 	
 	// Add A Specific Course
-	@PostMapping("/course")
+	@PostMapping("/addNew/course")
 	public ResponseEntity<CourseDetail> createCourse(@RequestBody CourseDetail course) {
 		try {
 			course.setCourseAuthor("Muni Singh");
@@ -52,7 +52,7 @@ public class CourseDetailsController {
 	}
 	
 	// Update Specific Course Details Using Course Id
-	@PutMapping("/update/{courseId}")
+	@PutMapping("/update/course/{courseId}")
 	public ResponseEntity<CourseDetail> updateCourse(@PathVariable("courseId") int courseId, @RequestBody CourseDetail course) {
 		Optional<CourseDetail> courseDetail=courseDetailRepository.findById(courseId);
 		try {
@@ -78,7 +78,7 @@ public class CourseDetailsController {
 	}
 	
 	// Deleting A Specific Course
-	@DeleteMapping("/delete/{courseId}")
+	@DeleteMapping("/delete/course/{courseId}")
 	public ResponseEntity<HttpStatus> deleteCourse(@PathVariable("courseId") int courseId) {
 		try {
 			courseDetailRepository.deleteById(courseId);
@@ -90,7 +90,7 @@ public class CourseDetailsController {
 	
 	
 	// Find Specific Course
-	@GetMapping("/search/{courseId}")
+	@GetMapping("/search/course/{courseId}")
 	public ResponseEntity<CourseDetail> getCourseByCourseId(@PathVariable("courseId") int courseId) {
 		try {
 			Optional<CourseDetail> course = courseDetailRepository.findById(courseId);

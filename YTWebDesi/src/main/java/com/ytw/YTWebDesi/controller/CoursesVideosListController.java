@@ -93,7 +93,7 @@ public class CoursesVideosListController {
 			Optional<CoursesVideosList> video = coursesVideosListRepository.findById(videoId);
 			if (video.isPresent()) {
 				CoursesVideosList _video=video.get();
-				return new ResponseEntity<>(_video, HttpStatus.OK);
+				return new ResponseEntity<>(_video, HttpStatus.FOUND);
 			} else {
 				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 			}

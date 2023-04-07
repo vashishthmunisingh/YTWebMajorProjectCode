@@ -98,7 +98,7 @@ public class UserQueryController {
 			Optional<UserQuery> query = userQueryRepository.findById(queryId);
 			if (query.isPresent()) {
 				UserQuery _query=query.get();
-				return new ResponseEntity<>(_query, HttpStatus.OK);
+				return new ResponseEntity<>(_query, HttpStatus.FOUND);
 			} else {
 				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 			}

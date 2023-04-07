@@ -92,7 +92,7 @@ public class SignUpUserController {
 			Optional<SignUpUser> signUpUser = signUpUserRepository.findById(userName);
 			if (signUpUser.isPresent()) {
 				SignUpUser _signUpUser=signUpUser.get();
-				return new ResponseEntity<>(_signUpUser, HttpStatus.OK);
+				return new ResponseEntity<>(_signUpUser, HttpStatus.FOUND);
 			} else {
 				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 			}

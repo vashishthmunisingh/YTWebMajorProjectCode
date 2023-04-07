@@ -96,7 +96,7 @@ public class CourseDetailsController {
 			Optional<CourseDetail> course = courseDetailRepository.findById(courseId);
 			if (course.isPresent()) {
 				CourseDetail _course=course.get();
-				return new ResponseEntity<>(_course, HttpStatus.OK);
+				return new ResponseEntity<>(_course, HttpStatus.FOUND);
 			} else {
 				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 			}

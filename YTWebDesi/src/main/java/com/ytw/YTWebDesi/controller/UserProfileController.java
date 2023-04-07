@@ -95,7 +95,7 @@ public class UserProfileController {
 			Optional<UserProfile> userProfile = userProfileRepository.findById(userId);
 			if (userProfile.isPresent()) {
 				UserProfile _userProfile=userProfile.get();
-				return new ResponseEntity<>(_userProfile, HttpStatus.OK);
+				return new ResponseEntity<>(_userProfile, HttpStatus.FOUND);
 			} else {
 				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 			}

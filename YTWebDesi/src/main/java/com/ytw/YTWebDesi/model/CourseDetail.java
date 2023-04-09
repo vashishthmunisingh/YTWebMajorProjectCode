@@ -144,5 +144,7 @@ public class CourseDetail {
 				+ lastUpdatedDateTime + ", courseLogo=" + courseLogo + ", isPaid=" + isPaid + ", courseFee=" + courseFee
 				+ "]";
 	}
- 
+
 }
+
+
